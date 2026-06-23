@@ -23,6 +23,6 @@ export const config = {
     client_secret: process.env.CLIENT_SECRET
   },
   db:{
-    uri:  process.env.DB_URI
+    uri: process.env.DB_URI
   }
 };
