@@ -1,0 +1,482 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Api  de little caesars",
+    "description": "Documentacion de prueba",
+    "version": "1"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/macetas-11e/LittleCaesars/1",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://proyecto2blittlecaesars-zw0c.onrender.com/api",
+      "description": "Render"
+    }
+  ],
+  "paths": {
+    "/pizzas": {
+      "get": {
+        "tags": [
+          "pizzas"
+        ],
+        "summary": "Your GET endpoint",
+        "description": "Con este metodo traemos todo el listado de pizzas de la base de datos",
+        "operationId": "get-Pizzas",
+        "responses": {
+          "200": {
+            "description": "Pizzas"
+          },
+          "404": {
+            "description": "Pizzas Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pizzas"
+        ],
+        "summary": "Your PUT endpoint",
+        "description": "Actualizar pizzas",
+        "operationId": "put-Pizzas",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pizzas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pizzas"
+        ],
+        "summary": "Your POST endpoint",
+        "description": "Para guardar una pizza",
+        "operationId": "post-Pizzas",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pizzas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pizzas"
+        ],
+        "summary": "Your DELETE endpoint",
+        "description": "Borrar Pizzas",
+        "operationId": "delete-Pizzas",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/branches": {
+      "get": {
+        "tags": [
+          "sucursales"
+        ],
+        "summary": "Your GET endpoint",
+        "description": "Traer todas las sucursales",
+        "operationId": "get-branches",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "sucursales"
+        ],
+        "summary": "Your PUT endpoint",
+        "description": "Actualizar sucursales",
+        "operationId": "put-branches",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Branches"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "sucursales"
+        ],
+        "summary": "Your POST endpoint",
+        "description": "Crear nuevas sucursales",
+        "operationId": "post-branches",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Branches"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "sucursales"
+        ],
+        "summary": "Your DELETE endpoint",
+        "description": "Borrar sucursales",
+        "operationId": "delete-branches",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/customers": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Your GET endpoint",
+        "description": "Obtener todos los clientes",
+        "operationId": "get-customers",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Your PUT endpoint",
+        "description": "Acutualizar Cliente",
+        "operationId": "put-customers",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Your DELETE endpoint",
+        "description": "Borrar cliente",
+        "operationId": "delete-customers",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/registerCustomer": {
+      "post": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Your POST endpoint",
+        "description": "Registrar cliente",
+        "operationId": "post-registerCustomer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/registerCustomer/verifyCodeEmail": {
+      "post": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Your POST endpoint",
+        "description": "Para verificar el codigo y poder verificar la cuenta",
+        "operationId": "post-registerCustomer-verifyCodeEmail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/registerCustomer_verifyCodeEmail_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pizzas": {
+        "title": "Pizzas",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "stock": {
+            "type": "number"
+          }
+        }
+      },
+      "Branches": {
+        "title": "Branches",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Customer": {
+        "title": "Customer",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "isVerified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "registerCustomer_verifyCodeEmail_body": {
+        "type": "object",
+        "properties": {
+          "verificationCodeRequest": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

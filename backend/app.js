@@ -14,6 +14,9 @@ import cartRoutes from "./src/routes/cart.js"
 import wompiRoutes from "./src/routes/wompi.js"
 import deliveriesRoutes from "./src/routes/deliveries.js"
 import { validateAuthCookie } from "./src/middlewares/authMiddleware.js"
+import limiter from "./src/middlewares/limiter.js";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./src/utils/macetas-11e-LittleCaesars-1-resolved (2).json" with { type: "json" };
 
 //Creo una constante que es igual a la libreria Express
 const app = express();
@@ -37,8 +40,10 @@ app.use("/api/loginCustomers", loginCustomerRoutes);
 app.use("/api/logout", logoutRoute);
 app.use("/api/recoveryPassword", recoveryPasswordRoutes);
 app.use("/api/providers", providerRoutes);
-app.use("/api/cart", cartRoutes)
-app.use("/api/wompi", wompiRoutes)
-app.use("/api/deliveries", deliveriesRoutes)
+app.use("/api/cart", cartRoutes);
+app.use("/api/wompi", wompiRoutes);
+app.use("/api/deliveries", deliveriesRoutes);
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(limiter);
 
 export default app;
